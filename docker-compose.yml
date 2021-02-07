@@ -1,0 +1,12 @@
+version: '2'
+services:
+  go-web-app:
+    restart: always
+    build:
+      dockerfile: Dockerfile
+      context: .
+    environment:
+      - VIRTUAL_HOST=goapp.z125.esliceu.com
+      - LETSENCRYPT_HOST=www.z125.esliceu.com
+    ports:
+      - "891:80"
