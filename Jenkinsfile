@@ -13,6 +13,7 @@ pipeline {
 		sh 'cd /home/jenkins; git clone https://github.com/MmartinezV2/go-docker.git'
 		sh 'cd /home/jenkins/go-docker; docker compose up -d'
                 sh 'echo "Do some tests..."'
+		sh 'docker run -v $PWD/tests:/tests --network host  postman/newman run /tests/go-docker.postman_collection.json'
                 sh 'echo "Remove environment test..."'
 		sh 'cd /home/jenkins/go-docker; docker compose down'
 		sh 'rm -rf /home/jenkins/go-docker'

@@ -1,0 +1,51 @@
+{
+	"info": {
+		"_postman_id": "3faa8f8a-51c1-46cb-a63f-389ce54223f5",
+		"name": "go-docker",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "http://localhost/hello/EsLiceu",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status test\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});",
+							"pm.test(\"Body is correct\", function () {",
+							"    pm.response.to.have.body(\"<h1>Hello, EsLiceu!\\n</h1>\");",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"verify\": \"false\",\n}"
+				},
+				"url": {
+					"raw": "http://localhost/hello/EsLiceu",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"path": [
+						"hello",
+						"EsLiceu"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
