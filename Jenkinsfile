@@ -11,10 +11,10 @@ pipeline {
             steps {
                 sh 'echo "Testing local deploy ..."'
 		sh 'cd /home/jenkins; git clone https://github.com/MmartinezV2/go-docker.git'
-		sh 'cd /home/jenkins/go-docker; docker-compose up -d'
+		sh 'cd /home/jenkins/go-docker; docker compose up -d'
                 sh 'echo "Do some tests..."'
                 sh 'echo "Remove environment test..."'
-		sh 'cd /home/jenkins/go-docker; docker-compose down'
+		sh 'cd /home/jenkins/go-docker; docker compose down'
 		sh 'rm -rf /home/jenkins/go-docker'
             }
         }
