@@ -4,7 +4,7 @@ pipeline {
         stage('Build') {
             steps {
                 sh 'echo "Compilando..."'
-                sh 'docker build -t MmartinezV2/go-web-app .'
+                sh 'docker build -t mmartinezv2/go-web-app .'
             }
         }
         stage('Test') {
